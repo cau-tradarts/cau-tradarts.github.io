@@ -16,28 +16,27 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://cau-tradarts.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#141613">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' fill='%23141613'/%3E%3Cg stroke='%23ecebdc' stroke-opacity='.6' fill='none'%3E%3Crect x='2.5' y='2.5' width='8' height='8'/%3E%3Crect x='11.5' y='2.5' width='8' height='8' fill='%23c6dc5c'/%3E%3Crect x='2.5' y='11.5' width='8' height='8'/%3E%3Crect x='11.5' y='11.5' width='8' height='8'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' fill='%23121212'/%3E%3Cg stroke='%23f2efe9' stroke-opacity='.6' fill='none'%3E%3Crect x='2.5' y='2.5' width='8' height='8'/%3E%3Crect x='11.5' y='2.5' width='8' height='8' fill='%23c6dc5c'/%3E%3Crect x='2.5' y='11.5' width='8' height='8'/%3E%3Crect x='11.5' y='11.5' width='8' height='8'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preload" as="image" href="assets/poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* 중앙대학교 전통예술학부 2026 창작음악파트 정기연주회 〈네 개의 창〉 모바일 초대장 */
 :root{
   color-scheme:dark;
-  --void:#0d0e0c;
-  --bg:#151714;
-  --bg2:#1c1e1a;
-  --surface:rgba(236,235,220,.028);
-  --ink:#f0efe2;
-  --body:#d6d7c9;
-  --mute:#989a8c;
-  --line:rgba(236,235,220,.13);
-  --line-strong:rgba(236,235,220,.24);
+  --void:#0a0a0a;
+  --bg:#121212;
+  --bg2:#181818;
+  --surface:rgba(255,255,255,.026);
+  --ink:#f2efe9;
+  --body:#d6d3cb;
+  --mute:#8e8b84;
+  --line:rgba(242,239,233,.12);
+  --line-strong:rgba(242,239,233,.22);
   --lime:#c6dc5c;
-  --lime-soft:rgba(198,220,92,.14);
-  --jade:#0e4f40
+  --lime-dim:rgba(198,220,92,.45)
 }
 *{box-sizing:border-box;min-width:0;-webkit-tap-highlight-color:transparent}
 html{background:var(--void);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -46,39 +45,33 @@ body{
   background:var(--bg);color:var(--ink);
   font:400 16px/1.85 "Noto Serif KR","Noto Serif CJK KR","AppleMyungjo",serif;
   overflow-x:clip;-webkit-font-smoothing:antialiased;word-break:keep-all;
-  border-left:1px solid rgba(236,235,220,.08);
-  border-right:1px solid rgba(236,235,220,.08);
-  box-shadow:0 0 120px rgba(0,0,0,.85)
+  border-left:1px solid rgba(242,239,233,.07);
+  border-right:1px solid rgba(242,239,233,.07);
+  box-shadow:0 0 120px rgba(0,0,0,.9)
 }
 body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.09;mix-blend-mode:overlay;
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.08;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
 }
 .en{font-family:"Cormorant Garamond",serif;font-weight:500}
 button{font:inherit;color:inherit}
 
-/* 오프닝: 어둠을 가르고 열리는 무대의 창 */
-#intro{position:fixed;inset:0;z-index:100;pointer-events:auto;cursor:pointer;animation:gone 0s linear 2.95s forwards}
-#intro .h{position:absolute;top:0;bottom:0;width:50.5%;background:#0a0b09;animation:1.3s cubic-bezier(.76,0,.18,1) 1.45s forwards}
-#intro .h.l{left:0;border-right:1px solid rgba(236,235,220,.08);animation-name:outL}
-#intro .h.r{right:0;border-left:1px solid rgba(236,235,220,.08);animation-name:outR}
+/* 오프닝: 순수 암전 + 창 틈 빛줄기 */
+#intro{position:fixed;inset:0;z-index:100;pointer-events:auto;cursor:pointer;animation:gone 0s linear 2.9s forwards}
+#intro .h{position:absolute;top:0;bottom:0;width:50.5%;background:#090909;animation:1.3s cubic-bezier(.76,0,.18,1) 1.4s forwards}
+#intro .h.l{left:0;border-right:1px solid rgba(242,239,233,.08);animation-name:outL}
+#intro .h.r{right:0;border-left:1px solid rgba(242,239,233,.08);animation-name:outR}
 #intro .slit{
   position:absolute;left:50%;top:50%;width:1.5px;height:0;transform:translate(-50%,-50%);
   background:#f7f9e8;
-  box-shadow:0 0 22px 4px rgba(198,220,92,.6),0 0 80px 18px rgba(236,235,220,.25);
-  animation:slit 1s cubic-bezier(.6,0,.2,1) .25s forwards,fade .45s ease 1.5s forwards
-}
-#intro .sub-kicker{
-  position:absolute;left:0;right:0;top:calc(50% - min(32vh,268px) - 34px);
-  text-align:center;font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:.42em;padding-left:.42em;
-  color:rgba(236,235,220,.5);text-transform:uppercase;opacity:0;
-  animation:tin .7s ease .45s forwards,fade .35s ease 1.3s forwards
+  box-shadow:0 0 20px 3px rgba(198,220,92,.55),0 0 70px 14px rgba(242,239,233,.2);
+  animation:slit 1s cubic-bezier(.6,0,.2,1) .25s forwards,fade .45s ease 1.45s forwards
 }
 #intro .t{
   position:absolute;left:0;right:0;top:calc(50% + min(32vh,268px) + 22px);
   text-align:center;font-size:15px;font-weight:400;letter-spacing:.58em;padding-left:.58em;
-  color:#d8d9ca;opacity:0;
-  animation:tin .7s ease .55s forwards,fade .35s ease 1.35s forwards
+  color:var(--body);opacity:0;
+  animation:tin .7s ease .5s forwards,fade .35s ease 1.3s forwards
 }
 @keyframes slit{to{height:min(64vh,536px)}}
 @keyframes fade{to{opacity:0}}
@@ -88,93 +81,89 @@ button{font:inherit;color:inherit}
 @keyframes gone{to{visibility:hidden;pointer-events:none}}
 #intro.skip{display:none}
 
-/* 표지: 극장 조명 할로 + 이중 매트 프레임 */
+/* 표지: 초록빛 전혀 없는 무채색 암전 배경 + 이중 매트 프레임 */
 .cover{
   min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
-  padding:32px 22px 28px;text-align:center;position:relative;overflow:hidden;
+  padding:28px 22px 26px;text-align:center;position:relative;overflow:hidden;
   background:
-    radial-gradient(ellipse 82% 56% at 50% 44%,rgba(14,79,64,.24),rgba(198,220,92,.05) 48%,transparent 76%),
-    linear-gradient(180deg,#111310 0%,var(--bg) 100%)
-}
-.cover-kicker{
-  margin:0;font-size:11px;letter-spacing:.36em;padding-left:.36em;color:var(--mute);text-transform:uppercase
+    radial-gradient(ellipse 76% 52% at 50% 45%,rgba(255,255,255,.045),transparent 74%),
+    linear-gradient(180deg,#0e0e0e 0%,var(--bg) 100%)
 }
 .poster{
-  width:min(100%,calc((100svh - 168px)*0.7076));margin:0;padding:8px;
-  background:rgba(236,235,220,.02);
-  border:1px solid rgba(236,235,220,.14);
-  box-shadow:0 36px 90px rgba(0,0,0,.82),0 0 60px rgba(14,79,64,.18)
+  width:min(100%,calc((100svh - 136px)*0.7076));margin:0;padding:8px;
+  background:rgba(255,255,255,.018);
+  border:1px solid rgba(242,239,233,.14);
+  box-shadow:0 36px 90px rgba(0,0,0,.88)
 }
-.poster img{display:block;width:100%;height:auto;aspect-ratio:1055/1491;box-shadow:0 0 0 1px rgba(236,235,220,.08)}
-.scroll{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.34em;color:var(--mute);text-decoration:none;padding-left:.34em}
-.scroll i{width:1px;height:34px;background:linear-gradient(var(--lime),transparent);animation:drip 2.4s ease-in-out infinite}
+.poster img{display:block;width:100%;height:auto;aspect-ratio:1055/1491;box-shadow:0 0 0 1px rgba(242,239,233,.07)}
+.scroll{display:flex;flex-direction:column;align-items:center;padding:4px 12px;text-decoration:none}
+.scroll i{width:1px;height:36px;background:linear-gradient(var(--lime),transparent);animation:drip 2.4s ease-in-out infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .js .cover>*{opacity:0;transform:translateY(16px);animation:up 1.2s cubic-bezier(.19,1,.22,1) forwards}
-.js .cover .cover-kicker{animation-delay:2.2s}
-.js .cover .poster{animation-delay:2.32s}
-.js .cover .scroll{animation-delay:2.75s}
+.js .cover .poster{animation-delay:2.25s}
+.js .cover .scroll{animation-delay:2.68s}
 @keyframes up{to{opacity:1;transform:none}}
 
-/* 건축적 섹션 구조 및 수직 빛줄기 구분선 */
+/* 구획 공통 + 라임 포인트 수직선 & 라벨 */
 .sec{padding:104px 28px;text-align:center;position:relative}
 .sec + .sec::before{
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
   width:1px;height:44px;
-  background:linear-gradient(180deg,transparent,rgba(198,220,92,.45),transparent)
+  background:linear-gradient(180deg,transparent,var(--lime-dim),transparent)
 }
-.eb{display:block;font-size:13px;letter-spacing:.38em;color:var(--lime);text-transform:uppercase;padding-left:.38em}
+.eb{display:block;font-size:13px;letter-spacing:.36em;color:var(--lime);text-transform:uppercase;padding-left:.36em}
 .sec h2{margin:10px 0 48px;font-size:26px;font-weight:600;letter-spacing:.04em;padding-left:.04em;color:var(--ink)}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity 1.05s ease,transform 1.05s cubic-bezier(.19,1,.22,1)}
 .js .rv.in{opacity:1;transform:none}
 
-/* 초대합니다 */
+/* 초대합니다 (배경은 무채색 유지, 구분선만 라임 포인트) */
 .letter{
-  background:radial-gradient(ellipse 90% 55% at 50% 50%,rgba(236,235,220,.025),transparent 72%)
+  background:radial-gradient(ellipse 90% 55% at 50% 50%,rgba(255,255,255,.022),transparent 72%)
 }
 .letter p{margin:0 0 32px;font-size:17px;line-height:2.12;color:var(--body)}
 .letter p:last-child{margin-bottom:0}
 .letter .lead{color:var(--ink)}
 .letter .em{
   margin-top:42px;padding-top:36px;position:relative;
-  font-size:18.5px;font-weight:600;color:#f6f7e8;line-height:2
+  font-size:18.5px;font-weight:600;color:var(--ink);line-height:2
 }
 .letter .em::before{
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:28px;height:1px;background:rgba(198,220,92,.55)
+  width:28px;height:1px;background:var(--lime-dim)
 }
 
-/* 공연 일시 */
+/* 공연 일시 (배경은 무채색 먹빛, 달력 원·뱃지·강조어만 라임 포인트) */
 .date{
   background:
-    radial-gradient(ellipse 85% 50% at 50% 28%,rgba(198,220,92,.055),transparent 70%),
+    radial-gradient(ellipse 85% 48% at 50% 26%,rgba(255,255,255,.03),transparent 70%),
     linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg))
 }
 .bigdate{
   font-size:clamp(52px,15vw,66px);font-weight:500;line-height:1;margin:0;
-  letter-spacing:.04em;padding-left:.04em;color:#f7f8ea;
-  text-shadow:0 8px 32px rgba(0,0,0,.5)
+  letter-spacing:.04em;padding-left:.04em;color:var(--ink);
+  text-shadow:0 8px 32px rgba(0,0,0,.55)
 }
 .wd{margin:14px 0 0;font-size:18px;letter-spacing:.04em;color:var(--ink)}
 .meta-note{
-  display:inline-block;margin:14px 0 0;padding:4px 14px;
-  border:1px solid rgba(198,220,92,.3);border-radius:999px;
-  font-size:12.5px;letter-spacing:.12em;padding-left:calc(14px + .12em);color:var(--lime);
-  background:rgba(198,220,92,.04)
+  display:inline-block;margin:14px 0 0;padding:4px 15px;
+  border:1px solid rgba(198,220,92,.38);border-radius:999px;
+  font-size:12.5px;letter-spacing:.1em;padding-left:calc(15px + .1em);color:var(--lime);
+  background:rgba(255,255,255,.02)
 }
 .cal{
-  margin:42px auto 0;max-width:348px;padding:28px 20px 22px;
-  background:rgba(10,11,9,.28);
+  margin:42px auto 0;max-width:348px;padding:26px 20px 22px;
+  background:rgba(0,0,0,.3);
   border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)
 }
-.cal .m{font-size:15px;letter-spacing:.36em;color:var(--mute);margin:0 0 18px;padding-left:.36em}
+.cal .m{font-size:14.5px;letter-spacing:.18em;color:var(--mute);margin:0 0 18px;padding-left:.18em}
 .grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:6px;font-size:15px}
 .grid span{height:38px;display:grid;place-items:center;position:relative}
 .grid .hd{font-size:12px;color:var(--mute);height:28px}
 .grid .sun{color:#c99a8c}
-.grid .on{color:#141613;font-weight:700;z-index:0}
+.grid .on{color:#121212;font-weight:700;z-index:0}
 .grid .on::before{
   content:"";position:absolute;width:36px;height:36px;border-radius:50%;
-  background:var(--lime);box-shadow:0 0 24px rgba(198,220,92,.6);z-index:-1
+  background:var(--lime);box-shadow:0 0 22px rgba(198,220,92,.5);z-index:-1
 }
 .cd{
   display:flex;justify-content:center;align-items:center;gap:4px;
@@ -182,102 +171,102 @@ button{font:inherit;color:inherit}
   border:1px solid var(--line);background:var(--surface)
 }
 .cd div{width:68px}
-.cd b{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:38px;line-height:1.05;font-variant-numeric:tabular-nums;color:#f7f8ea}
-.cd small{display:block;margin-top:4px;font-family:"Cormorant Garamond",serif;font-size:11px;letter-spacing:.24em;padding-left:.24em;color:var(--mute)}
-.cd i{font-style:normal;font-family:"Cormorant Garamond",serif;font-size:26px;color:rgba(236,235,220,.32);padding-bottom:14px}
+.cd b{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:38px;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--ink)}
+.cd small{display:block;margin-top:5px;font-size:11.5px;letter-spacing:.12em;padding-left:.12em;color:var(--mute)}
+.cd i{font-style:normal;font-family:"Cormorant Garamond",serif;font-size:26px;color:rgba(242,239,233,.28);padding-bottom:15px}
 .cdtx{margin:22px 0 0;font-size:15.5px;color:var(--body)}
 .cdtx em{font-style:normal;color:var(--lime);font-weight:600}
 .cals{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:34px}
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;
   border:1px solid rgba(198,220,92,.55);border-radius:999px;
-  background:linear-gradient(180deg,rgba(198,220,92,.11),rgba(198,220,92,.04));
-  color:#f3f5df;text-decoration:none;font-size:14px;cursor:pointer;
-  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  background:rgba(255,255,255,.025);
+  color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
   transition:background .2s,border-color .2s,transform .15s
 }
-.btn:hover{background:rgba(198,220,92,.18);border-color:var(--lime)}
+.btn:hover{background:rgba(198,220,92,.1);border-color:var(--lime)}
 .btn:active{transform:translateY(1px)}
-.btn.alt{border-color:var(--line-strong);background:rgba(236,235,220,.03);color:var(--ink)}
-.btn.alt:hover{border-color:rgba(198,220,92,.5);background:rgba(236,235,220,.07)}
+.btn.alt{border-color:var(--line-strong);background:rgba(255,255,255,.018);color:var(--body)}
+.btn.alt:hover{border-color:rgba(198,220,92,.5);color:var(--ink)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 
-/* 프로그램: 클래식 갈라 리플릿 카드 위계 + 건축적 인덱스 워터마크 */
+/* 프로그램: 무채색 카드 + 좌측 2px 라임 라인 & 창 아이콘 포인트 */
 .edge{
   position:relative;overflow:hidden;
   border:1px solid var(--line);
-  background:linear-gradient(165deg,rgba(236,235,220,.038) 0%,rgba(236,235,220,.01) 100%);
+  background:linear-gradient(165deg,rgba(255,255,255,.032) 0%,rgba(255,255,255,.008) 100%);
   padding:26px 24px 28px;text-align:left;
-  box-shadow:0 14px 36px rgba(0,0,0,.28)
+  box-shadow:0 14px 36px rgba(0,0,0,.34)
 }
 .edge::before{
   content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(180deg,var(--lime),rgba(198,220,92,.08));opacity:.65
+  background:linear-gradient(180deg,var(--lime),rgba(198,220,92,.08));opacity:.75
 }
 .edge.sub-stage::before{
-  background:linear-gradient(180deg,rgba(236,235,220,.45),rgba(236,235,220,.06));opacity:.5
+  background:linear-gradient(180deg,rgba(242,239,233,.35),rgba(242,239,233,.05));opacity:.55
 }
 .edge + .edge{margin-top:18px}
 .edge-wm{
-  position:absolute;right:18px;top:12px;pointer-events:none;user-select:none;
-  font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
-  font-size:54px;line-height:1;color:rgba(236,235,220,.055);letter-spacing:-.02em
+  position:absolute;right:18px;top:14px;pointer-events:none;user-select:none;
+  font-family:"Cormorant Garamond",serif;font-weight:400;
+  font-size:50px;line-height:1;color:rgba(242,239,233,.05);letter-spacing:.02em
 }
-.tag{font-size:13.5px;letter-spacing:.08em;color:var(--lime);margin:0;display:flex;align-items:center;gap:9px}
-.edge.sub-stage .tag{color:#d8d9ca}
-.edge h3{margin:8px 0 0;font-size:22px;font-weight:600;line-height:1.38;letter-spacing:-.01em;color:#f6f7e8}
+.tag{font-size:13.5px;letter-spacing:.06em;color:var(--lime);margin:0;display:flex;align-items:center;gap:9px}
+.edge.sub-stage .tag{color:var(--body)}
+.edge h3{margin:8px 0 0;font-size:22px;font-weight:600;line-height:1.38;letter-spacing:-.01em;color:var(--ink)}
 .by{margin:5px 0 0;font-size:14.5px;color:var(--body)}
 .nw{white-space:nowrap}
 .ln{
-  margin:14px 0 0;padding-top:13px;border-top:1px solid rgba(236,235,220,.08);
-  font-size:14.5px;line-height:1.78;color:#c9cabd
+  margin:14px 0 0;padding-top:13px;border-top:1px solid rgba(242,239,233,.08);
+  font-size:14.5px;line-height:1.78;color:#c9c6be
 }
 .who{margin:10px 0 0;font-size:13.5px;line-height:1.75;color:var(--mute)}
 .who b{font-weight:600;color:var(--ink)}
 
-/* 오시는 길 */
+/* 오시는 길 (초록빛 배경 완전 배제, 무채색 #181818 유지) */
 .loc{
   background:
-    radial-gradient(ellipse 90% 50% at 50% 0%,rgba(14,79,64,.16),transparent 68%),
+    radial-gradient(ellipse 85% 45% at 50% 0%,rgba(255,255,255,.025),transparent 68%),
     var(--bg2);
   padding-bottom:72px
 }
-.venue{margin:0;font-size:21.5px;font-weight:600;line-height:1.58;color:#f6f7e8}
+.venue{margin:0;font-size:21.5px;font-weight:600;line-height:1.58;color:var(--ink)}
 .addr{margin:12px 0 0;color:var(--mute);font-size:15px}
 .copy{background:none;border:0;padding:8px 4px;min-height:40px;color:var(--lime);font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .maps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:28px}
 .maps a{
   display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;padding:0 6px;
-  border:1px solid var(--line-strong);background:rgba(15,17,14,.65);color:var(--ink);
+  border:1px solid var(--line-strong);background:rgba(12,12,12,.68);color:var(--ink);
   text-decoration:none;font-size:14px;border-radius:6px;white-space:nowrap;
   transition:border-color .2s,background .2s
 }
-.maps a:hover{border-color:rgba(198,220,92,.55);background:rgba(198,220,92,.06)}
+.maps a:hover{border-color:rgba(198,220,92,.55);background:rgba(255,255,255,.04)}
 .maps svg{flex:none}
 
 /* 관람 안내 및 공유 */
 .guide{
   margin-top:36px;padding:22px 20px;
-  background:rgba(10,11,9,.26);
+  background:rgba(0,0,0,.28);
   border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);text-align:left
 }
 .guide dl{margin:0;display:grid;grid-template-columns:68px 1fr;row-gap:10px;column-gap:14px;font-size:14px;line-height:1.68}
 .guide dt{color:var(--mute);font-weight:600}
-.guide dd{margin:0;color:#dedfd2}
+.guide dd{margin:0;color:var(--body)}
 .share-wrap{margin-top:40px;text-align:center}
 .share-btn{width:100%;max-width:280px}
 
 footer{
   background:var(--bg2);
-  border-top:1px solid rgba(236,235,220,.07);
+  border-top:1px solid rgba(242,239,233,.07);
   padding:28px 26px calc(52px + env(safe-area-inset-bottom,0px));
   text-align:center;font-size:13px;color:var(--mute);line-height:1.8
 }
-footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
+footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
 .toast{
   position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);
-  opacity:0;background:#eef1d6;color:#141613;padding:11px 20px;border-radius:999px;
-  font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.25s;z-index:95;pointer-events:none;white-space:nowrap
+  opacity:0;background:#eef1d6;color:#121212;padding:11px 20px;border-radius:999px;
+  font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:.25s;z-index:95;pointer-events:none;white-space:nowrap
 }
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media(max-width:359px){.maps{grid-template-columns:1fr}.cals{flex-direction:column;align-items:center}.cals .btn{width:100%;max-width:260px}}
@@ -289,14 +278,12 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
 <div id="intro" aria-hidden="true">
   <div class="h l"></div><div class="h r"></div>
   <i class="slit"></i>
-  <span class="sub-kicker">2026 Regular Concert</span>
   <p class="t">네 개의 창</p>
 </div>
 
 <header class="cover">
-  <p class="cover-kicker en">Chung-Ang Univ. · Creative Music</p>
   <figure class="poster"><img src="assets/poster.jpg" width="1055" height="1491" fetchpriority="high" decoding="async" alt="중앙대학교 예술대학 전통예술학부 2026 창작음악파트 정기연주회 포스터. COMPOSER X PRODUCER, 네 개의 창. 2026년 12월 2일 수요일 19시 30분, 중앙대학교 다빈치캠퍼스 한국음악관(608관) 2층 국악당."></figure>
-  <a class="scroll en" href="#invite" aria-label="초대 글로 내려가기">SCROLL<i></i></a>
+  <a class="scroll" href="#invite" aria-label="초대 글로 내려가기"><i></i></a>
 </header>
 
 <main>
@@ -310,26 +297,26 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
 </section>
 
 <section class="sec date" id="date">
-  <span class="eb en rv">The Date</span>
+  <span class="eb en rv">Date</span>
   <h2 class="rv">공연 일시</h2>
   <p class="bigdate en rv">2026. 12. 2.</p>
   <p class="wd rv">수요일 저녁 7시 30분</p>
   <p class="meta-note rv">전석 무료</p>
   <div class="cal rv">
-    <p class="m en">DECEMBER</p>
+    <p class="m">2026년 12월</p>
     <div class="grid" id="grid"></div>
   </div>
   <div class="cd rv" id="cd" aria-live="off">
-    <div><b id="cdD">0</b><small>DAYS</small></div><i>:</i>
-    <div><b id="cdH">00</b><small>HOUR</small></div><i>:</i>
-    <div><b id="cdM">00</b><small>MIN</small></div><i>:</i>
-    <div><b id="cdS">00</b><small>SEC</small></div>
+    <div><b id="cdD">0</b><small>일</small></div><i>:</i>
+    <div><b id="cdH">00</b><small>시간</small></div><i>:</i>
+    <div><b id="cdM">00</b><small>분</small></div><i>:</i>
+    <div><b id="cdS">00</b><small>초</small></div>
   </div>
   <p class="cdtx rv" id="cdtx">공연까지 <em>며칠</em> 남았습니다.</p>
   <div class="cals rv">
     <button class="btn" type="button" id="ical">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
-      캘린더 저장 (아이폰·기본)
+      캘린더 저장
     </button>
     <a class="btn alt" id="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank" rel="noopener">
       구글 캘린더
@@ -372,7 +359,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
 
 <footer>
   <span class="ft-mark" aria-hidden="true">
-    <svg width="18" height="18" viewBox="0 0 22 22"><g stroke="rgba(236,235,220,.45)" stroke-width="1" fill="none"><rect x="1.5" y="1.5" width="8.5" height="8.5"/><rect x="12" y="1.5" width="8.5" height="8.5" fill="rgba(198,220,92,.75)"/><rect x="1.5" y="12" width="8.5" height="8.5"/><rect x="12" y="12" width="8.5" height="8.5"/></g></svg>
+    <svg width="18" height="18" viewBox="0 0 22 22"><g stroke="rgba(242,239,233,.45)" stroke-width="1" fill="none"><rect x="1.5" y="1.5" width="8.5" height="8.5"/><rect x="12" y="1.5" width="8.5" height="8.5" fill="#c6dc5c"/><rect x="1.5" y="12" width="8.5" height="8.5"/><rect x="12" y="12" width="8.5" height="8.5"/></g></svg>
   </span><br>
   중앙대학교 예술대학 전통예술학부<br>2026 창작음악파트 정기연주회 〈네 개의 창〉
 </footer>
@@ -385,7 +372,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
   const TITLE='2026 창작음악파트 정기연주회 〈네 개의 창〉';
   const LOC='중앙대학교 다빈치캠퍼스 한국음악관(608관) 2층 국악당, 경기도 안성시 대덕면 서동대로 4726';
 
-  const icon=n=>{const pos=[[0,0],[1,0],[0,1],[1,1]];return `<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><g stroke="rgba(236,235,220,.5)" stroke-width="1">${pos.map(([x,y],i)=>{const on=n===5||n===i+1;return `<rect x="${1.5+x*10}" y="${1.5+y*10}" width="9" height="9" fill="${on?'#c6dc5c':'none'}"/>`}).join('')}</g></svg>`};
+  const icon=n=>{const pos=[[0,0],[1,0],[0,1],[1,1]];return `<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><g stroke="rgba(242,239,233,.5)" stroke-width="1">${pos.map(([x,y],i)=>{const on=n===5||n===i+1;return `<rect x="${1.5+x*10}" y="${1.5+y*10}" width="9" height="9" fill="${on?'#c6dc5c':'none'}"/>`}).join('')}</g></svg>`};
 
   // 달력 (2026년 12월 1일은 화요일)
   const hd=['일','월','화','수','목','금','토'].map((d,i)=>`<span class="hd${i===0?' sun':''}">${d}</span>`).join('');
@@ -393,8 +380,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
   for(let d=1;d<=31;d++){const dow=(d+1)%7;cells+=`<span class="${d===2?'on':dow===0?'sun':''}">${d}</span>`}
   $('grid').innerHTML=hd+cells;
 
-  // 프로그램 (명사형 완결 + 클래식 로마 숫자 인덱스 워터마크)
-  const rom=['','I','II','III','IV'];
+  // 프로그램 (담백한 명사 종결 + 아라비아 숫자 인덱스)
   const W=[
     {n:1,t:'맥(脈)-깨어남',by:'작곡 백채현',ln:'물·대지·바람 속에 흐르는 자연의 고유한 박동을 형상화한 가야금 <span class="nw">독주곡</span>',who:'<b>25현 가야금</b> 송은지'},
     {n:2,t:'잔해',by:'작곡 백소이',ln:'쌓아 온 것이 흔들리고 무너진 끝에 남은 기억과 감정을 담은 거문고 <span class="nw">독주곡</span>',who:'<b>거문고</b> 신욱진'},
@@ -403,9 +389,9 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
   ];
   const edge=(n,tag,t,by,ln,who='',wm='',sub=false)=>`<article class="edge${sub?' sub-stage':''} rv">${wm?`<span class="edge-wm" aria-hidden="true">${wm}</span>`:''}<div><p class="tag">${icon(n)}${tag}</p><h3>${t}</h3><p class="by">${by}</p><p class="ln">${ln}</p>${who?`<p class="who">${who.split(' · ').map(x=>`<span class="nw">${x}</span>`).join(' · ')}</p>`:''}</div></article>`;
   $('prog').innerHTML=
-    edge(0,'여는 창','삼도 설장구','지도 김민성 · 연주 창작음악파트 <span class="nw">1, 2학년</span>','경기·충청·호남·영남의 가락을 엮어 다스름부터 휘모리까지 이어지는 장구 <span class="nw">연주</span>','','Preludio',true)+
-    W.map(w=>edge(w.n,`제${w.n}창`,w.t,w.by,w.ln,w.who,rom[w.n],false)).join('')+
-    edge(5,'열린 창','동부민요 메들리 · 범범태평가','지휘 소서현 · 합창 <span class="nw">창작음악파트 전학년</span>','네 곡의 동부민요 선율을 엮은 메들리와 태평을 기원하는 <span class="nw">합창곡</span>','<b>피아노</b> 김서영 · <b>타악</b> 김민성','Finale',true);
+    edge(0,'여는 창','삼도 설장구','지도 김민성 · 연주 창작음악파트 <span class="nw">1, 2학년</span>','경기·충청·호남·영남의 가락을 엮어 다스름부터 휘모리까지 이어지는 장구 <span class="nw">연주</span>','','',true)+
+    W.map(w=>edge(w.n,`제${w.n}창`,w.t,w.by,w.ln,w.who,`0${w.n}`,false)).join('')+
+    edge(5,'열린 창','동부민요 메들리 · 범범태평가','지휘 소서현 · 합창 <span class="nw">창작음악파트 전학년</span>','네 곡의 동부민요 선율을 엮은 메들리와 태평을 기원하는 <span class="nw">합창곡</span>','<b>피아노</b> 김서영 · <b>타악</b> 김민성','',true);
 
   // 카운트다운
   const T=Date.parse('2026-12-02T19:30:00+09:00'), pad=x=>String(x).padStart(2,'0');
@@ -422,7 +408,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.7}
   const q=new URLSearchParams({action:'TEMPLATE',text:TITLE,dates:'20261202T103000Z/20261202T120000Z',ctz:'Asia/Seoul',location:LOC,details:`중앙대학교 예술대학 전통예술학부 ${TITLE}\n모바일 초대장: ${URL_INVITE}`});
   $('gcal').href='https://calendar.google.com/calendar/render?'+q;
 
-  // 애플·기본 캘린더 (.ics) 저장
+  // 기본 캘린더 (.ics) 저장
   $('ical').addEventListener('click',()=>{
     const ics=[
       'BEGIN:VCALENDAR',
