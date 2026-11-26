@@ -56,7 +56,7 @@ body::after{
 .en{font-family:"Cormorant Garamond",serif;font-weight:500}
 button{font:inherit;color:inherit}
 
-/* 오프닝: 순수 암전 + 창 틈 빛줄기 */
+/* 오프닝 */
 #intro{position:fixed;inset:0;z-index:100;pointer-events:auto;cursor:pointer;animation:gone 0s linear 2.9s forwards}
 #intro .h{position:absolute;top:0;bottom:0;width:50.5%;background:#090909;animation:1.3s cubic-bezier(.76,0,.18,1) 1.4s forwards}
 #intro .h.l{left:0;border-right:1px solid rgba(242,239,233,.08);animation-name:outL}
@@ -81,42 +81,48 @@ button{font:inherit;color:inherit}
 @keyframes gone{to{visibility:hidden;pointer-events:none}}
 #intro.skip{display:none}
 
-/* 표지: 초록빛 전혀 없는 무채색 암전 배경 + 이중 매트 프레임 */
+/* 표지: 하단 본문이 살짝 보이도록 86svh 설정 + 직관적인 한국어 스크롤 유도 */
 .cover{
-  min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
-  padding:28px 22px 26px;text-align:center;position:relative;overflow:hidden;
+  min-height:86svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  padding:24px 22px 18px;text-align:center;position:relative;overflow:hidden;
   background:
     radial-gradient(ellipse 76% 52% at 50% 45%,rgba(255,255,255,.045),transparent 74%),
     linear-gradient(180deg,#0e0e0e 0%,var(--bg) 100%)
 }
 .poster{
-  width:min(100%,calc((100svh - 136px)*0.7076));margin:0;padding:8px;
+  width:min(92%,calc((86svh - 130px)*0.7076));margin:0;padding:8px;
   background:rgba(255,255,255,.018);
   border:1px solid rgba(242,239,233,.14);
-  box-shadow:0 36px 90px rgba(0,0,0,.88)
+  box-shadow:0 32px 80px rgba(0,0,0,.88)
 }
 .poster img{display:block;width:100%;height:auto;aspect-ratio:1055/1491;box-shadow:0 0 0 1px rgba(242,239,233,.07)}
-.scroll{display:flex;flex-direction:column;align-items:center;padding:4px 12px;text-decoration:none}
-.scroll i{width:1px;height:36px;background:linear-gradient(var(--lime),transparent);animation:drip 2.4s ease-in-out infinite}
-@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.scroll{
+  display:inline-flex;flex-direction:column;align-items:center;gap:5px;
+  padding:6px 16px 2px;text-decoration:none;color:var(--body);
+  font-size:12.5px;letter-spacing:.14em;padding-left:calc(16px + .14em)
+}
+.scroll span{color:var(--lime);opacity:.92}
+.scroll svg{color:var(--lime);animation:bob 1.7s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(6px);opacity:1}}
 .js .cover>*{opacity:0;transform:translateY(16px);animation:up 1.2s cubic-bezier(.19,1,.22,1) forwards}
 .js .cover .poster{animation-delay:2.25s}
-.js .cover .scroll{animation-delay:2.68s}
+.js .cover .scroll{animation-delay:2.6s}
 @keyframes up{to{opacity:1;transform:none}}
 
-/* 구획 공통 + 라임 포인트 수직선 & 라벨 */
-.sec{padding:104px 28px;text-align:center;position:relative}
+/* 구획 공통 */
+.sec{padding:96px 28px;text-align:center;position:relative}
+#invite.sec{padding-top:52px}
 .sec + .sec::before{
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
   width:1px;height:44px;
   background:linear-gradient(180deg,transparent,var(--lime-dim),transparent)
 }
 .eb{display:block;font-size:13px;letter-spacing:.36em;color:var(--lime);text-transform:uppercase;padding-left:.36em}
-.sec h2{margin:10px 0 48px;font-size:26px;font-weight:600;letter-spacing:.04em;padding-left:.04em;color:var(--ink)}
+.sec h2{margin:10px 0 46px;font-size:26px;font-weight:600;letter-spacing:.04em;padding-left:.04em;color:var(--ink)}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity 1.05s ease,transform 1.05s cubic-bezier(.19,1,.22,1)}
 .js .rv.in{opacity:1;transform:none}
 
-/* 초대합니다 (배경은 무채색 유지, 구분선만 라임 포인트) */
+/* 초대합니다 */
 .letter{
   background:radial-gradient(ellipse 90% 55% at 50% 50%,rgba(255,255,255,.022),transparent 72%)
 }
@@ -132,7 +138,7 @@ button{font:inherit;color:inherit}
   width:28px;height:1px;background:var(--lime-dim)
 }
 
-/* 공연 일시 (배경은 무채색 먹빛, 달력 원·뱃지·강조어만 라임 포인트) */
+/* 공연 일시 */
 .date{
   background:
     radial-gradient(ellipse 85% 48% at 50% 26%,rgba(255,255,255,.03),transparent 70%),
@@ -191,7 +197,7 @@ button{font:inherit;color:inherit}
 .btn.alt:hover{border-color:rgba(198,220,92,.5);color:var(--ink)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 
-/* 프로그램: 무채색 카드 + 좌측 2px 라임 라인 & 창 아이콘 포인트 */
+/* 프로그램 */
 .edge{
   position:relative;overflow:hidden;
   border:1px solid var(--line);
@@ -224,7 +230,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offse
 .who{margin:10px 0 0;font-size:13.5px;line-height:1.75;color:var(--mute)}
 .who b{font-weight:600;color:var(--ink)}
 
-/* 오시는 길 (초록빛 배경 완전 배제, 무채색 #181818 유지) */
+/* 오시는 길 */
 .loc{
   background:
     radial-gradient(ellipse 85% 45% at 50% 0%,rgba(255,255,255,.025),transparent 68%),
@@ -270,7 +276,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
 }
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media(max-width:359px){.maps{grid-template-columns:1fr}.cals{flex-direction:column;align-items:center}.cals .btn{width:100%;max-width:260px}}
-@media(prefers-reduced-motion:reduce){#intro{display:none}.js .cover>*{animation:none;opacity:1;transform:none}.js .rv{opacity:1;transform:none;transition:none}.scroll i{animation:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){#intro{display:none}.js .cover>*{animation:none;opacity:1;transform:none}.js .rv{opacity:1;transform:none;transition:none}.scroll svg{animation:none}html{scroll-behavior:auto}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -283,7 +289,10 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
 
 <header class="cover">
   <figure class="poster"><img src="assets/poster.jpg" width="1055" height="1491" fetchpriority="high" decoding="async" alt="중앙대학교 예술대학 전통예술학부 2026 창작음악파트 정기연주회 포스터. COMPOSER X PRODUCER, 네 개의 창. 2026년 12월 2일 수요일 19시 30분, 중앙대학교 다빈치캠퍼스 한국음악관(608관) 2층 국악당."></figure>
-  <a class="scroll" href="#invite" aria-label="초대 글로 내려가기"><i></i></a>
+  <a class="scroll" href="#invite" aria-label="초대 글로 내려가기">
+    <span>아래로 내려 보기</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
 </header>
 
 <main>
@@ -292,7 +301,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
   <h2 class="rv">초대합니다</h2>
   <p class="lead rv">중앙대학교 전통예술학부<br>2026 창작음악파트 정기연주회<br>〈네 개의 창〉에 초대합니다.</p>
   <p class="rv">고요와 무너짐, 기다림과 함께함.<br>네 명의 작곡가가 각자의 창 너머로<br>바라본 풍경을 음악에 담았습니다.</p>
-  <p class="rv">서로에게 지치기도 하고,<br>다시 서로에게 기대며<br>함께 완성한 무대입니다.</p>
+  <p class="rv">서로에게 지치기도 하고,<br>서로에게 기대기도 하며<br>함께 완성한 무대입니다.</p>
   <p class="em rv">사람에 지치고,<br>사람으로 피어나는 이야기.<br><br>혼자서는 그리지 못했던 풍경을<br>함께 바라봐 주시길 바랍니다.</p>
 </section>
 
@@ -336,16 +345,16 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
   <p class="venue rv">중앙대학교 다빈치캠퍼스<br>한국음악관(608관) 2층 국악당</p>
   <p class="addr rv"><span id="addr">경기도 안성시 대덕면 서동대로 4726</span><br><button class="copy" type="button" id="copy">주소 복사하기</button></p>
   <div class="maps rv">
-    <a href="https://map.naver.com/p/search/%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%9C%EA%B5%AD%EC%9D%8C%EC%95%85%EA%B4%80" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7ecb6a" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>네이버 지도</a>
-    <a href="https://map.kakao.com/link/search/%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%9C%EA%B5%AD%EC%9D%8C%EC%95%85%EA%B4%80" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2d64b" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>카카오맵</a>
-    <a href="tmap://search?name=%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%9C%EA%B5%AD%EC%9D%8C%EC%95%85%EA%B4%80" id="tmap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7aa8ff" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>티맵</a>
+    <a href="https://map.naver.com/p/search/%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B5%AD%EC%95%85%EA%B4%80" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7ecb6a" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>네이버 지도</a>
+    <a href="https://map.kakao.com/link/search/%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B5%AD%EC%95%85%EA%B4%80" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2d64b" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>카카오맵</a>
+    <a href="tmap://search?name=%EC%A4%91%EC%95%99%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B5%AD%EC%95%85%EA%B4%80" id="tmap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7aa8ff" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>티맵</a>
   </div>
   <div class="guide rv">
     <dl>
       <dt>관람 안내</dt>
       <dd>전석 무료 · 공연 시작 10분 전까지 착석 부탁드립니다.</dd>
       <dt>차량 방문</dt>
-      <dd>내비게이션에 ‘중앙대학교 한국음악관’ 또는 ‘608관’을 검색해 주세요.</dd>
+      <dd>지도·내비게이션 검색 시 구 명칭인 ‘중앙대학교 다빈치캠퍼스 국악관’을 입력해 주세요.</dd>
     </dl>
   </div>
   <div class="share-wrap rv">
@@ -422,7 +431,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
       'DTEND:20261202T120000Z',
       `SUMMARY:${TITLE}`,
       `LOCATION:${LOC}`,
-      `DESCRIPTION:중앙대학교 예술대학 전통예술학부 ${TITLE}\n모바일 초대장: ${URL_INVITE}`,
+      `DESCRIPTION:중앙대학교 예술대학 전통예술학부 ${TITLE}\\n모바일 초대장: ${URL_INVITE}`,
       'END:VEVENT',
       'END:VCALENDAR'
     ].join('\r\n');
@@ -459,7 +468,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
   $('tmap').addEventListener('click',e=>{
     if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){
       e.preventDefault();
-      copyText('중앙대학교 한국음악관','티맵은 모바일 앱에서 연결됩니다 (건물명 복사됨)');
+      copyText('중앙대학교 국악관','티맵은 모바일 앱에서 연결됩니다 (건물명 복사됨)');
     }
   });
 
