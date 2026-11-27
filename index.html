@@ -398,7 +398,7 @@ footer .ft-mark{display:inline-block;margin-bottom:10px;opacity:.85}
   ];
   const edge=(n,tag,t,by,ln,who='',wm='',sub=false)=>`<article class="edge${sub?' sub-stage':''} rv">${wm?`<span class="edge-wm" aria-hidden="true">${wm}</span>`:''}<div><p class="tag">${icon(n)}${tag}</p><h3>${t}</h3><p class="by">${by}</p><p class="ln">${ln}</p>${who?`<p class="who">${who.split(' · ').map(x=>`<span class="nw">${x}</span>`).join(' · ')}</p>`:''}</div></article>`;
   $('prog').innerHTML=
-    edge(0,'여는 창','삼도 설장구','지도 김민성 · 연주 창작음악파트 <span class="nw">1, 2학년</span>','경기·충청·호남·영남의 가락을 엮어 다스름부터 휘모리까지 이어지는 장구 <span class="nw">연주</span>','','',true)+
+    edge(0,'여는 창','삼도 설장구','지도 김민성 · 연주 창작음악파트 <span class="nw">1, 2학년</span>','경기·충청·호남·영남의 특징적인 가락을 엮어 다채로운 장단으로 펼쳐내는 장구 <span class="nw">연주</span>','','',true)+
     W.map(w=>edge(w.n,`제${w.n}창`,w.t,w.by,w.ln,w.who,`0${w.n}`,false)).join('')+
     edge(5,'열린 창','동부민요 메들리 · 범범태평가','지휘 소서현 · 합창 <span class="nw">창작음악파트 전학년</span>','네 곡의 동부민요 선율을 엮은 메들리와 태평을 기원하는 <span class="nw">합창곡</span>','<b>피아노</b> 김서영 · <b>타악</b> 김민성','',true);
 
